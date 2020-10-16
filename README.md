@@ -69,5 +69,6 @@ Run:
 
     >crontab -e
 Add a crontab job:
+
     # At 4am local time run the python script via shell script to ensure we're in the right directory
     0 4 * * * /home/<user>/python_enlighten_api/run_inverter_daily_stats.sh >> /home/<user>/python_enlighten_api/cron.log 2>&1
