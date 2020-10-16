@@ -1,4 +1,4 @@
-# enlighten_api
+# python_enlighten_api
 Enphase Enlighten API application to pull data and monitor panel performance and send alerts on anomalies
 
 ## Requirements
@@ -8,7 +8,7 @@ Requires Python 3.6.8 or later installed. Much effort has been taken to ensure t
 
 1. Allow app access to your Enlighten Account:
     * Follow the instructions here to add a new application to your developer account: https://developer.enphase.com/docs/quickstart.html
-2. Open enlighten_api.py and set the following in the User Settings section:
+2. Open run_inverter_daily_stats.py and set the following in the User Settings section:
     * user_id: within MyEnlighten go to your account Settings and find the API Settings user ID
     * site_id: within MyEnlighten the Site ID should be displayed (or if using the web browser should be in the URL [https://enlighten.enphaseenergy.com/pv/systems/:SITE_ID/overview]
 3. Set the following in the Enlighten Settings section:
