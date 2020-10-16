@@ -57,21 +57,21 @@ else:
 # Load the inverter data to the dictionary. 
 yesterday = (datetime.datetime.now() + datetime.timedelta(days=-1)).strftime('%Y-%m-%d')
 for inverter in inverter_summary["micro_inverters"]:
-    inverter_id = str(inverter["id"])
-    if inverter_id not in inverter_historical_data["micro_inverters"]:
-        inverter_historical_data["micro_inverters"][inverter_id] = {}
-    inverter_historical_data["micro_inverters"][inverter_id][yesterday] = { "daily_energy": 0, "lifetime_energy": inverter["energy"]["value"]}
+    inverter_sn = str(inverter["serial_number"])
+    if inverter_sn not in inverter_historical_data["micro_inverters"]:
+        inverter_historical_data["micro_inverters"][inverter_sn] = {}
+    inverter_historical_data["micro_inverters"][inverter_sn][yesterday] = { "daily_energy": 0, "lifetime_energy": inverter["energy"]["value"]}
 
 # Populate the daily_energy for each inverter for today's date based on the previous day's lifetime_energy and now's lifetime_energy
 two_days_ago = (datetime.datetime.now() + datetime.timedelta(days=-2)).strftime('%Y-%m-%d')
 total_daily_wh = 0
-for inverter_id, inverter_data in inverter_historical_data["micro_inverters"].items():
+for inverter_sn, inverter_data in inverter_historical_data["micro_inverters"].items():
     if two_days_ago in inverter_data:
-        yesterday_lifetime_energy = inverter_data[two_days_ago]["lifetime_energy"]
-        today_lifetime_energy = inverter_data[yesterday]["lifetime_energy"]
-        today_energy = today_lifetime_energy - yesterday_lifetime_energy
-        inverter_historical_data["micro_inverters"][inverter_id][yesterday]["daily_energy"] = today_energy
-        total_daily_wh = total_daily_wh + today_energy
+        two_days_ago_lifetime_energy = inverter_data[two_days_ago]["lifetime_energy"]
+        yesterday_lifetime_energy = inverter_data[yesterday]["lifetime_energy"]
+        yesterday_energy = yesterday_lifetime_energy - two_days_ago_lifetime_energy
+        inverter_historical_data["micro_inverters"][inverter_sn][yesterday]["daily_energy"] = yesterday_energy
+        total_daily_wh = total_daily_wh + yesterday_energy
 
 # Write new data to file
 with open('data/inverter_daily_data.json', 'w') as outfile:
