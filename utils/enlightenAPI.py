@@ -9,9 +9,6 @@ from datetime import date
 
 class enlightenAPI:
 
-    # TODO: Seems per inverter data is not supported. THis guy (https://github.com/baysinger/enphase_scraper) made a web scraper to get this data
-    # out of the EnlightenManager (paid), so try it out using the free MyEnlighten
-
     def __init__(self, config):
         '''
         Initialize the englightAPI class

@@ -1,6 +1,6 @@
 # Author:   Daniel Patenaude
 # Date:     10/13/2020
-# Desc:     Use the Enphase Enlighten API application to pull data and monitor panel performance and send alerts on anomalies
+# Desc:     Use the Enphase Enlighten API application to pull inverter/panel daily energy production data
 
 import datetime
 import json
