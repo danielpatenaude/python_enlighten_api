@@ -24,7 +24,7 @@ This repository contains a few scripts used to hit the Enphase Enlighten API and
 
 ### run_inverter_daily_stats.py
 
-Runs the Enlighten API route 'inverters_summary_by_envoy_or_site' to collect the lifetime energy produced by each inverter. If you call this route once a day after your solar is no longer producing power (e.g.: 11pm) you get the total lifetime power produced by each inverter, including that day. If you track this total lifetime energy value every day, you can then subtract the current day's total from the previous day lifetime total. That gives you the daily production value for that inverter. Note: if your Envoy is connected via low bandwidth Cellular, data only refreshes to Enlighten every 6 hours. So perform this route the next day in the early morning to ensure you get complete data.
+Runs the Enlighten API route 'inverters_summary_by_envoy_or_site' to collect the lifetime energy produced by each inverter. If you call this route once a day before your solar is producing power (e.g.: 4am) you get the total lifetime power produced by each inverter, including the previous day. If you track this total lifetime energy value every day, you can then subtract the current day's total from the previous day lifetime total. That gives you the daily production value for that inverter. Note: if your Envoy is connected via low bandwidth Cellular, data only refreshes to Enlighten every 6 hours. So perform this route the next day in the early morning to ensure you get complete data.
 
 The resulting data is stashed in a .json file. The file organizes the data by microinverter (by ID), then by day. So you can easily parse this historical data for daily production values.
 For example:
