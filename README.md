@@ -1,6 +1,8 @@
 # python_enlighten_api
 Enphase Enlighten API & Google Sheets application to pull data and monitor panel performance and populate a Google Sheet with historical and visual data. This allows tracking individual panel performance over the lifetime of the system. Most of the functionlaity provided here is also provided by the Enphase Enlighten website and app, but this allows for granular panel tracking and performance over time.
 
+For example: the panel underperforming (red) is partially blocked by a neighbor's tree during the morning hours. So it's reporting performance outside a few standard deviations.
+
 <p align="center">
    <img src="solar_performance_example.png" width="500">
 </p>
