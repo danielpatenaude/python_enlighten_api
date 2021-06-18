@@ -28,7 +28,7 @@ Requires Python 3.6.8 or later installed. Much effort has been taken to ensure t
     * https://developers.google.com/sheets/api/quickstart/python
     * Allow your API token to access your Google Sheets account: https://console.developers.google.com/apis/api/sheets.googleapis.com/overview?
 5. Google Sheet Setup
-    * The google sheet can be accessed from: https://docs.google.com/spreadsheets/d/1B9pT3fS1Vb2RyltW2USYqwb0Y48A22HzXnojsDLgvhw/edit?usp=sharing. It is a working copy of an example system setup. You may need to manually clear and remove data to use.
+    * The google sheet can be accessed from: https://docs.google.com/spreadsheets/d/1JPnT5T4xvDIKaefL8Z7AoxRNFv6HnVBF7SH-J9Yqfdk. It is a working copy of an example system setup. You may need to manually clear and remove data to use.
 How to Setup: 
         1. You'll need to make a copy of this sheet to your personal Google Drive.
         2. Populate each of your inverter serial numbers into the 'Panel Data-Template' Sheet.
