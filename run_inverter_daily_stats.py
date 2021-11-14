@@ -14,12 +14,12 @@ import populate_google_sheet
 #-------------------------------------------
 configs = \
 [{
-    "name": <some name>
-    "user_id": <user_id>,
-    "site_id": <site_id>,
-    "api_url": <api_url>,
-    "api_key": <api_key>
-    "spreadsheet_id": <google sheet_id>
+    "name": "<some name>",
+    "user_id": "<user_id>",
+    "site_id": "<site_id>",
+    "api_url": "<api_url>",
+    "api_key": "<api_key>",
+    "spreadsheet_id": "<google sheet_id>"
 }]
 
 for config in configs:
