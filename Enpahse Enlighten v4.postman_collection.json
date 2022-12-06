@@ -1,0 +1,209 @@
+{
+	"info": {
+		"_postman_id": "274a5c9b-df54-48b1-a24e-25405890f016",
+		"name": "Enpahse Enlighten v4",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Fetch systems",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Host",
+						"value": "api.enphaseenergy.com",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.enphaseenergy.com/api/v4/systems?key={{app_api_key}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"enphaseenergy",
+						"com"
+					],
+					"path": [
+						"api",
+						"v4",
+						"systems"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{app_api_key}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Generate OAuth2 access_token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{client_secret}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{client_id}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://api.enphaseenergy.com/oauth/token?grant_type=authorization_code&redirect_uri=https://api.enphaseenergy.com/oauth/redirect_uri&code={{auth_code}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"enphaseenergy",
+						"com"
+					],
+					"path": [
+						"oauth",
+						"token"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "authorization_code"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "https://api.enphaseenergy.com/oauth/redirect_uri"
+						},
+						{
+							"key": "code",
+							"value": "{{auth_code}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refresh access_token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{client_secret}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{client_id}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://api.enphaseenergy.com/oauth/token?grant_type=refresh_token&refresh_token={{refresh_token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"enphaseenergy",
+						"com"
+					],
+					"path": [
+						"oauth",
+						"token"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "refresh_token"
+						},
+						{
+							"key": "refresh_token",
+							"value": "{{refresh_token}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "inverters_summary_by_envoy_or_site",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Host",
+						"value": "api.enphaseenergy.com",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.enphaseenergy.com/api/v4/systems/inverters_summary_by_envoy_or_site?key={{app_api_key}}&site_id={{system_id}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"enphaseenergy",
+						"com"
+					],
+					"path": [
+						"api",
+						"v4",
+						"systems",
+						"inverters_summary_by_envoy_or_site"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{app_api_key}}"
+						},
+						{
+							"key": "site_id",
+							"value": "{{system_id}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

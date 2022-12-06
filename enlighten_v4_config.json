@@ -1,0 +1,11 @@
+{
+    "name": "<some name>",
+    "system_id": "<system/site_id",
+    "api_url": "https://api.enphaseenergy.com/",
+    "app_api_key": "<your app's api_key>",
+    "app_client_id": "<your app's client ID>",
+    "app_client_secret": "<your app's client secret>",
+    "access_token": "<your access_token from running 'Enpahse Enlighten v4.postman_collection' -> 'Generate OAuth2 access_token'>",
+    "refresh_token": "<your refresh_token from running 'Enpahse Enlighten v4.postman_collection' -> 'Generate OAuth2 access_token'>",
+    "spreadsheet_id": "<google sheet_id>"
+}
