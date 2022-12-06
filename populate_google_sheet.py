@@ -1,3 +1,7 @@
+# Author:   Daniel Patenaude
+# Date:     12/02/2022
+# Desc:     Populate the enphase data into the google sheet template
+
 import datetime
 import json
 import os
@@ -20,7 +24,7 @@ def run(config):
 
     # Grab the historical data from the data store
     inverter_historical_data = {}
-    datafile = f'data/inverter_daily_data-{config["site_id"]}.json'
+    datafile = f'data/inverter_daily_data-{config["system_id"]}.json'
     if os.path.isfile(datafile) and os.access(datafile, os.R_OK):
         with open(datafile) as json_file:
             inverter_historical_data = json.load(json_file)
