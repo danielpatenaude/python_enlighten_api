@@ -87,6 +87,19 @@ class enlightenAPI_v4:
         result = json.loads(response.text)
         return result
 
+    def production_telemetry(self):
+        '''
+        Run the enlighten API telemetry/production_micro route (https://developer-v4.enphase.com/docs.html).
+        This route returns the telemetry for all the production micros of a system.
+        It will return the default 'day' granularity i.e. start from midnight today in 5 minutes increments
+        '''
+        print(self.__log_time() + "Pulling EnlightenAPI inverter summary...")
+        url = f'{self.config["api_url"]}api/v4/systems/{self.config["system_id"]}/telemetry/production_micro?key={self.config["app_api_key"]}'
+        response = requests.get(url, headers={'Authorization': 'Bearer ' + self.config["access_token"]})
+        self.__assert_success(response)
+        result = json.loads(response.text)
+        return result
+
     def __init__(self, config):
         '''
         Initialize the englightAPI class
