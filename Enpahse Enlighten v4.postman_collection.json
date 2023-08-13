@@ -157,7 +157,7 @@
 			"response": []
 		},
 		{
-			"name": "inverters_summary_by_envoy_or_site",
+			"name": "Inverters Summary by Envoy or Site",
 			"request": {
 				"auth": {
 					"type": "bearer",
@@ -199,6 +199,47 @@
 						{
 							"key": "site_id",
 							"value": "{{system_id}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Microinverter Telemetry",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.enphaseenergy.com/api/v4/systems/{{system_id}}/telemetry/production_micro?key={{app_api_key}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"enphaseenergy",
+						"com"
+					],
+					"path": [
+						"api",
+						"v4",
+						"systems",
+						"{{system_id}}",
+						"telemetry",
+						"production_micro"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{app_api_key}}"
 						}
 					]
 				}

@@ -17,7 +17,7 @@ class enlightenAPI_v4:
                 If exit_on_failure, returned whether the web request was successful
         '''
         if res.status_code != 200:
-            dl.error("Server Responded: " + str(res.status_code) + " - " + res.text)
+            print("Server Responded: " + str(res.status_code) + " - " + res.text)
             if exit_on_failure:
                 quit()
             else:
