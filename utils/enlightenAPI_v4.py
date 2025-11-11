@@ -53,7 +53,7 @@ class enlightenAPI_v4:
                 The full web request result of the token refresh
         '''
         print(self.__log_time() + "Refreshing access_token...")
-        url = f'{self.config["api_url"]}/oauth/token?grant_type=refresh_token&refresh_token={self.config["refresh_token"]}'
+        url = f'{self.config["api_url"]}oauth/token?grant_type=refresh_token&refresh_token={self.config["refresh_token"]}'
         # Enlighten API v4 Quickstart says this should be a GET request, but that seems to be incorrect. POST works.
         response = requests.post(url, auth=(self.config['app_client_id'], self.config['app_client_secret']))
         refresh_successful = self.__assert_success(response, False)
